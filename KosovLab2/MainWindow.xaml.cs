@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lib_4;
+using LibArray;
 
 namespace KosovLab2
 {
@@ -20,6 +22,8 @@ namespace KosovLab2
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +42,11 @@ namespace KosovLab2
 
         private void CreateArray(object sender, RoutedEventArgs e)
         {
-                
+            int x = Convert.ToInt32(ArraySize.Text);
+
+            int[] array = new int[x];
+            
+            array = Array.ArrayCeate(x);
         }
     }
 }
