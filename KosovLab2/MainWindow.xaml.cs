@@ -35,5 +35,10 @@ namespace KosovLab2
         {
             Close();
         }
+
+        private void CreateArray(object sender, RoutedEventArgs e)
+        {
+                
+        }
     }
 }

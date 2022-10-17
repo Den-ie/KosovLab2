@@ -13,17 +13,46 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Menu>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.ColumnSpan="2">
             <MenuItem Header="О программе"
                       Click="About"/>
 
             <MenuItem Header="Выход"
                       Click="Exit"/>
         </Menu>
+
+        <DataGrid Grid.Row="1" 
+                  Grid.ColumnSpan="2"
+                  Margin="5"/>
         
-        <DataGrid Grid.Row="1" Margin="5"/>
         <Grid Grid.Row="2">
-            
+
+            <GroupBox Header="Основные действия с массивом" 
+                      Margin="5">
+                <Grid>
+                    <TextBox x:Name="ArraySize" 
+                             Margin="5,30,230,125"/>
+
+                    <Label Content="Размер массива"
+                            Margin="5,5,230,140"/>
+
+                    <Button Content="Создать"
+                            Margin="155,10,145,125"
+                            Click="CreateArray"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Доп.действия с массива"
+                      Grid.Column="1">
+                <Grid>
+                    
+                </Grid>
+            </GroupBox>
         </Grid>
     </Grid>
 </Window>

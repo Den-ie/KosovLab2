@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosovLab2", "KosovLab2\KosovLab2.csproj", "{6F17F95A-FC67-498C-81F3-EC170902FF35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KosovLab2", "KosovLab2\KosovLab2.csproj", "{6F17F95A-FC67-498C-81F3-EC170902FF35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibArray", "LibArray\LibArray.csproj", "{A1BE340E-E891-4373-9629-33156E446ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib_4", "Lib_4\Lib_4.csproj", "{DDA1454F-6CB4-475B-B784-E0D59F439645}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6F17F95A-FC67-498C-81F3-EC170902FF35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F17F95A-FC67-498C-81F3-EC170902FF35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F17F95A-FC67-498C-81F3-EC170902FF35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BE340E-E891-4373-9629-33156E446ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BE340E-E891-4373-9629-33156E446ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BE340E-E891-4373-9629-33156E446ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BE340E-E891-4373-9629-33156E446ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA1454F-6CB4-475B-B784-E0D59F439645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA1454F-6CB4-475B-B784-E0D59F439645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA1454F-6CB4-475B-B784-E0D59F439645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA1454F-6CB4-475B-B784-E0D59F439645}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
