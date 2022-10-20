@@ -44,6 +44,8 @@ namespace KosovLab2
         {
             int x = Convert.ToInt32(ArraySize.Text);
 
+            Array masse = new Array(x);
+
             int[] array = 
 
         }
