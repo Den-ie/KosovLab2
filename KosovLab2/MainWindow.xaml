@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KosovLab2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="JoJo no Kimyou na Bouken: Phantom Blood" Height="450" Width="800">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.13*"/>
@@ -26,9 +27,9 @@
                       Click="Exit"/>
         </Menu>
 
-        <DataGrid Grid.Row="1" 
+       <DataGrid Grid.Row="1" 
                   Grid.ColumnSpan="2"
-                  Margin="5"/>
+                  Margin="5"/> 
 
 
         <GroupBox Header="Основные действия с массивом" 
