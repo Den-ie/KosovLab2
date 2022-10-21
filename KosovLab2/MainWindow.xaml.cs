@@ -47,12 +47,12 @@ namespace KosovLab2
 
             Array<double> array = new Array<double>(x);
 
-            for (int i = 0; i < array.Lenght; i++)
+            for (int i = 0; i < x; i++)
             {
-                array[i] = i;
+                array.Add(i);
             }
 
-            answer.Text = string.Join(" ", array);
+            answer.Text = string.Join(" ", array.ToArray());
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace LibArray
@@ -42,7 +43,7 @@ namespace LibArray
         private int EnsureCapacity(int itemsLenght = 0)
         {
             int tempCapacity = Capacity;
-            while(itemsLenght + Lenght >= itemsLenght)
+            while(itemsLenght + Lenght >= tempCapacity)
             {
                 tempCapacity *= 2;
             }
@@ -50,7 +51,7 @@ namespace LibArray
             return tempCapacity;
         }
 
-        private void Add(T item)
+        public void Add(T item)
         {
             Capacity = EnsureCapacity();
             _items[Lenght++] = item;
@@ -61,6 +62,11 @@ namespace LibArray
             Capacity = _defaultcapacity;
             Lenght = 0;
             _items = new T[Capacity];
+        }
+
+        public T[] ToArray()
+        {
+            return _items.Take(Lenght).ToArray();
         }
     }
 }
