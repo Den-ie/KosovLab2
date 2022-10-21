@@ -46,7 +46,8 @@
                             Margin="155,10,145,125"
                             Click="CreateArray"/>
 
-                <TextBox Margin="5,60,175,80"/>
+                <TextBox x:Name="answer" 
+                         Margin="5,60,175,80"/>
             </Grid>
         </GroupBox>
 

@@ -6,7 +6,7 @@ namespace Lib_4
     public class ExtensionArray
     {
         
-        public static int[] ArrayCeate(Array<double> numbers)
+        public static int ArrayCeate(Array<double> numbers)
         {
             Random rnd = new Random();
             
@@ -14,8 +14,8 @@ namespace Lib_4
             {
                 numbers[i] = rnd.Next(0, 100);
             }
-
-            return numbers;
+            
+            return 2;
         }
 
     }

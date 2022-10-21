@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,10 +45,14 @@ namespace KosovLab2
         {
             int x = Convert.ToInt32(ArraySize.Text);
 
-            Array masse = new Array(x);
+            Array<double> array = new Array<double>(x);
 
-            int[] array = 
+            for (int i = 0; i < array.Lenght; i++)
+            {
+                array[i] = i;
+            }
 
+            answer.Text = string.Join(" ", array);
         }
     }
 }
