@@ -8,27 +8,59 @@ namespace LibArray
         private T[] _items;
         private int _capacity;
 
+        private readonly int _defaultcapacity = 8;
+
         public Array(int capacity)
         {
             _items = new T[capacity];
             Capacity = capacity;
         }
 
+        public int Lenght { get; private set; }
+
+        public T this[int index]
+        {
+            get { return _items[index]; }
+            set { _items[index] = value; }
+        }
+
         public int Capacity
         {
-            get
-            {
-                return _capacity;
-            }
+            get => _capacity;
             private set
             {
+                if(value==_capacity)
+                {
+                    return;
+                }
+                
                 _capacity = value;
+                Array.Resize(ref _items, _capacity);
             }
         }
 
-        public int cap()
+        private int EnsureCapacity(int itemsLenght = 0)
         {
-            return _capacity;
+            int tempCapacity = Capacity;
+            while(itemsLenght + Lenght >= itemsLenght)
+            {
+                tempCapacity *= 2;
+            }
+
+            return tempCapacity;
+        }
+
+        private void Add(T item)
+        {
+            Capacity = EnsureCapacity();
+            _items[Lenght++] = item;
+        }
+
+        public void Clear()
+        {
+            Capacity = _defaultcapacity;
+            Lenght = 0;
+            _items = new T[Capacity];
         }
     }
 }

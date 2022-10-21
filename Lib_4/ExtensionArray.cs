@@ -1,23 +1,21 @@
 using System;
+using LibArray;
 
 namespace Lib_4
 {
     public class ExtensionArray
     {
-
-
-
-        public static int[] ArrayCeate(int size)
+        
+        public static int[] ArrayCeate(Array<double> numbers)
         {
             Random rnd = new Random();
-            int[] array = new int[size];
-
-            for (int i = 0; i < size; i++)
+            
+            for (int i = 0; i < numbers.Lenght; i++)
             {
-                array[i] = rnd.Next(0, 100);
+                numbers[i] = rnd.Next(0, 100);
             }
 
-            return array;
+            return numbers;
         }
 
     }
