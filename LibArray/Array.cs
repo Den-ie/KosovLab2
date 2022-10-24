@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
@@ -17,7 +18,7 @@ namespace LibArray
             Capacity = capacity;
         }
 
-        public int Lenght { get; private set; }
+        public int Length { get; private set; }
 
         public T this[int index]
         {
@@ -30,11 +31,11 @@ namespace LibArray
             get => _capacity;
             private set
             {
-                if(value==_capacity)
+                if (value == _capacity)
                 {
                     return;
                 }
-                
+
                 _capacity = value;
                 Array.Resize(ref _items, _capacity);
             }
@@ -43,7 +44,7 @@ namespace LibArray
         private int EnsureCapacity(int itemsLenght = 0)
         {
             int tempCapacity = Capacity;
-            while(itemsLenght + Lenght >= tempCapacity)
+            while (itemsLenght + Length >= tempCapacity)
             {
                 tempCapacity *= 2;
             }
@@ -51,22 +52,49 @@ namespace LibArray
             return tempCapacity;
         }
 
+        public DataTable ToDataTable()
+        {
+            var res = new DataTable();
+
+            for (int i = 0; i < Length; i++)
+            {
+                res.Columns.Add("col" + (i + 1), typeof(T));
+            }
+
+            var row = res.NewRow();
+
+            for (int i = 0; i < Length; i++)
+            {
+                row[i] = _items[i];
+            }
+
+            res.Rows.Add(row);
+            return res;
+        }
+
+        public void AddRange(T[] items)
+        {
+            Capacity = EnsureCapacity(items.Length);
+            Array.Copy(items, 0, _items, Length, items.Length);
+            Length += items.Length;
+        }
+
         public void Add(T item)
         {
             Capacity = EnsureCapacity();
-            _items[Lenght++] = item;
+            _items[Length++] = item;
         }
 
         public void Clear()
         {
             Capacity = _defaultcapacity;
-            Lenght = 0;
+            Length = 0;
             _items = new T[Capacity];
         }
 
         public T[] ToArray()
         {
-            return _items.Take(Lenght).ToArray();
+            return _items.Take(Length).ToArray();
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KosovLab2"
         mc:Ignorable="d"
-        Title="JoJo no Kimyou na Bouken: Phantom Blood" Height="450" Width="800">
+        Title="JoJo no Kimyou na Bouken: Phantom Blood" Height="450" Width="800" ResizeMode="CanMinimize">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -27,7 +27,8 @@
                       Click="Exit"/>
         </Menu>
 
-        <DataGrid Grid.Row="1" 
+        <DataGrid x:Name="Table" 
+                  Grid.Row="1" 
                   Grid.ColumnSpan="2"
                   Margin="5"/>
 
@@ -45,13 +46,10 @@
                 <Button Content="Создать"
                             Margin="155,10,145,125"
                             Click="CreateArray"/>
-
-                <TextBox x:Name="answer" 
-                         Margin="5,60,175,80"/>
             </Grid>
         </GroupBox>
 
-        <GroupBox Header="Доп.действия с массива"
+        <GroupBox Header="Доп.действия с массивом"
                   Grid.Column="1"
                   Grid.Row="2"
                   Margin="5,0,5,5">

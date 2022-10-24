@@ -23,7 +23,7 @@ namespace KosovLab2
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
 
         public MainWindow()
         {
@@ -43,16 +43,30 @@ namespace KosovLab2
 
         private void CreateArray(object sender, RoutedEventArgs e)
         {
-            int x = Convert.ToInt32(ArraySize.Text);
-
-            Array<double> array = new Array<double>(x);
-
-            for (int i = 0; i < x; i++)
+            if (!int.TryParse(ArraySize.Text, out int count))
             {
-                array.Add(i);
+                MessageBox.Show("Неверный размер массива", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            
+            if (count <= 0)
+            {
+                MessageBox.Show("Размер массива должен быть больше 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
 
-            answer.Text = string.Join(" ", array.ToArray());
+            Array<double> array = new Array<double>(count);
+
+            Random rnd = new Random();
+            for (int i = 0; i < count; i++)
+            {
+                array.Add(rnd.Next(-100, 101));
+            }
+
+            double [] ar = {1,0,1,2};
+            array.AddRange(ar);
+
+            Table.ItemsSource = array.ToDataTable().DefaultView;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Lib_4
         {
             Random rnd = new Random();
             
-            for (int i = 0; i < numbers.Lenght; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = rnd.Next(0, 100);
             }
