@@ -3,20 +3,17 @@ using LibArray;
 
 namespace Lib_4
 {
-    public class ExtensionArray
+    public static class ExtensionArray
     {
-        
-        public static int ArrayCeate(Array<double> numbers)
+
+        public static void Init(this Array<double> numbers)
         {
             Random rnd = new Random();
-            
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                numbers[i] = rnd.Next(0, 100);
-            }
-            
-            return 2;
-        }
 
+            for (int i = 0; i < numbers.Capacity; i++)
+            {
+                numbers.Add(rnd.Next(1, 100));
+            }
+        }
     }
 }

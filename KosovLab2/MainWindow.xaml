@@ -40,12 +40,23 @@
                 <TextBox x:Name="ArraySize" 
                              Margin="5,30,230,125"/>
 
+                <TextBox x:Name="AddingMas" 
+                             Margin="5,75,230,80"/>
+
                 <Label Content="Размер массива"
                             Margin="5,5,230,140"/>
 
                 <Button Content="Создать"
                             Margin="155,10,145,125"
                             Click="CreateArray"/>
+                
+                <Button Content="Добавить"
+                            Margin="155,55,145,80"
+                            Click="Add"/>
+                
+                <Button Content="Очисить"
+                            Margin="290,10,10,125"
+                            Click="Clear"/>
             </Grid>
         </GroupBox>
 

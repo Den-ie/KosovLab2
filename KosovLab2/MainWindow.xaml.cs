@@ -41,6 +41,8 @@ namespace KosovLab2
             Close();
         }
 
+        Array<double> array = new Array<double>(8);
+
         private void CreateArray(object sender, RoutedEventArgs e)
         {
             if (!int.TryParse(ArraySize.Text, out int count))
@@ -48,7 +50,6 @@ namespace KosovLab2
                 MessageBox.Show("Неверный размер массива", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
             if (count <= 0)
             {
                 MessageBox.Show("Размер массива должен быть больше 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -58,15 +59,31 @@ namespace KosovLab2
             Array<double> array = new Array<double>(count);
 
             Random rnd = new Random();
-            for (int i = 0; i < count; i++)
-            {
-                array.Add(rnd.Next(-100, 101));
-            }
 
-            double [] ar = {1,0,1,2};
-            array.AddRange(ar);
+            array.Init();
 
             Table.ItemsSource = array.ToDataTable().DefaultView;
+        }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+                string[] massiveString = AddingMas.Text.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                double[] numbers = new double[massiveString.Length];
+
+                for (int i = 0; i < massiveString.Length; i++)
+                {
+                    int.TryParse(massiveString[i], out int value);
+                    numbers[i] = value;
+                }
+
+                array.AddRange(numbers);
+                Table.ItemsSource = array.ToDataTable().DefaultView;
+        }
+
+        private void Clear(object sender, RoutedEventArgs e)
+        {
+            array.Clear();
+            Table.ItemsSource = null;
         }
     }
 }
