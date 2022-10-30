@@ -79,16 +79,17 @@ namespace LibArray
             Length += items.Length;
         }
 
-        // 1 2 3 4 5  array
+        // 1 2 3 4 5 array
         // 0 1 2 3 4 index
-
         public bool Remove(T item)
         {
             int x = Array.IndexOf(_items, item);
 
             if (x >= 0)
             {
-                Array.Copy(_items, x+1, _items, x, Capacity - x);
+                Array.Copy(_items, x+1, _items, x, Capacity - (x+1));
+                Capacity--;
+                Length--;
                 return true;
             }
             return false;
