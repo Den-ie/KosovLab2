@@ -8,8 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="JoJo_Part_1_Phantom_Blood.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LibArray\LibArray.csproj" />
     <ProjectReference Include="..\Lib_4\Lib_4.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="JoJo_Part_1_Phantom_Blood.jpg" />
   </ItemGroup>
 
 </Project>

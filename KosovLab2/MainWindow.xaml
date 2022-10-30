@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KosovLab2"
         mc:Ignorable="d"
-        Title="JoJo no Kimyou na Bouken: Phantom Blood" Height="450" Width="800" ResizeMode="CanMinimize">
+        Title="JoJo no Kimyou na Bouken: Phantom Blood" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/JoJo_Part_1_Phantom_Blood.jpg">
 
     <Grid>
         <Grid.RowDefinitions>

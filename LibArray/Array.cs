@@ -88,7 +88,6 @@ namespace LibArray
             if (x >= 0)
             {
                 Array.Copy(_items, x+1, _items, x, Capacity - (x+1));
-                Capacity--;
                 Length--;
                 return true;
             }
