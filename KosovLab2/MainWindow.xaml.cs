@@ -60,6 +60,14 @@ namespace KosovLab2
             _array.Init();
 
             Table.ItemsSource = _array.ToDataTable().DefaultView;
+
+            AddingMas.IsEnabled = true;
+            Removing.IsEnabled = true;
+            AddElements.IsEnabled = true;
+            ClearArray.IsEnabled = true;
+            DelElement.IsEnabled = true;
+            Calculating.IsEnabled = true;
+            //Answer.IsEnabled = true;
         }
 
         private void Add(object sender, RoutedEventArgs e)
@@ -81,6 +89,17 @@ namespace KosovLab2
         {
             _array.Clear();
             Table.ItemsSource = null;
+
+            AddingMas.IsEnabled = false;
+            Removing.IsEnabled = false;
+            AddElements.IsEnabled = false;
+            ClearArray.IsEnabled = false;
+            DelElement.IsEnabled = false;
+            Calculating.IsEnabled = false;
+            AddingMas.Clear();
+            Removing.Clear();
+            //Answer.IsEnabled = false;
+
         }
 
         private void DeleteElem(object sender, RoutedEventArgs e)
@@ -95,6 +114,11 @@ namespace KosovLab2
             }
             else MessageBox.Show("Некорректные значения");
 
+        }
+
+        private void CalculateAnswer(object sender, RoutedEventArgs e)
+        {
+           MessageBox.Show(ExtensionArray.Calculate(_array), "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

@@ -33,46 +33,56 @@
                   Margin="5"/>
 
 
-        <GroupBox Header="Основные действия с массивом" 
+        <GroupBox Header="Взаимодействие с массивом" 
                   Grid.Row="2"
+                  Grid.ColumnSpan="2"
                   Margin="5,0,5,5">
             <Grid>
                 <TextBox x:Name="ArraySize" 
-                             Margin="5,30,230,125"/>
-
-                <TextBox x:Name="AddingMas" 
-                             Margin="5,75,230,80"/>
+                         Margin="5,30,553,125"/>
 
                 <Label Content="Размер массива"
-                            Margin="5,5,230,140"/>
+                         Margin="5,5,230,140"/>
 
                 <Button Content="Создать"
-                            Margin="155,10,145,125"
-                            Click="CreateArray"/>
+                         Margin="245,10,410,125"
+                         Click="CreateArray"/>
 
-                <Button Content="Добавить"
-                            Margin="155,55,145,80"
-                            Click="Add"/>
+                <TextBox x:Name="AddingMas"
+                         Margin="5,83,553,72"
+                         IsEnabled = "False"/>
 
-                <Button Content="Очисить"
-                            Margin="290,10,10,125"
-                            Click="Clear"/>
-                
+                <Button x:Name="AddElements" 
+                        Content="Добавить"
+                        Margin="245,64,410,72"
+                        Click="Add"
+                        IsEnabled = "False"/>
+
+                <Button x:Name="ClearArray"
+                        Content="Очисить"
+                        Margin="430,34,228,36"
+                        Click="Clear"
+                        IsEnabled = "False"/>
+
                 <TextBox x:Name="Removing" 
-                    Margin="5,120,230,35"/>
-                
-                <Button Content="Удалить элемент"
-                    Margin="155,100,145,35"
-                    Click="DeleteElem"/>
-            </Grid>
-        </GroupBox>
+                         Margin="5,140,553,15"
+                         IsEnabled = "False"/>
 
-        <GroupBox Header="Доп.действия с массивом"
-                  Grid.Column="1"
-                  Grid.Row="2"
-                  Margin="5,0,5,5">
-            <Grid>
+                <Button x:Name="DelElement"
+                        Content="Удалить"
+                        Margin="245,120,410,15"
+                        Click="DeleteElem"
+                        IsEnabled = "False"/>
 
+                <!--<TextBox x:Name="Answer"
+                         Margin="648,10,5,10"
+                         IsReadOnly="True"/>-->
+
+                <Button x:Name="Calculating"
+                        Content="Расчитать"
+                        Margin="608,35,50,36"
+                        Click="CalculateAnswer"
+                        IsEnabled = "False"/>
             </Grid>
         </GroupBox>
     </Grid>
