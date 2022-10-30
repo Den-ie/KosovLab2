@@ -82,5 +82,19 @@ namespace KosovLab2
             _array.Clear();
             Table.ItemsSource = null;
         }
+
+        private void DeleteElem(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(Removing.Text, out int item))
+            {
+                if(_array.Remove(item))
+                {
+                Table.ItemsSource = _array.ToDataTable().DefaultView;
+                }
+                else MessageBox.Show("Такого элемента нет");
+            }
+            else MessageBox.Show("Некорректные значения");
+
+        }
     }
 }

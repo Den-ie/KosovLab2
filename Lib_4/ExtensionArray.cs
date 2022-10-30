@@ -12,7 +12,7 @@ namespace Lib_4
 
             for (int i = 0; i < numbers.Capacity; i++)
             {
-                numbers.Add(rnd.Next(1, 100));
+                numbers.Add(rnd.Next(1, 11));
             }
         }
     }

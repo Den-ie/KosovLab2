@@ -49,14 +49,21 @@
                 <Button Content="Создать"
                             Margin="155,10,145,125"
                             Click="CreateArray"/>
-                
+
                 <Button Content="Добавить"
                             Margin="155,55,145,80"
                             Click="Add"/>
-                
+
                 <Button Content="Очисить"
                             Margin="290,10,10,125"
                             Click="Clear"/>
+                
+                <TextBox x:Name="Removing" 
+                    Margin="5,120,230,35"/>
+                
+                <Button Content="Удалить элемент"
+                    Margin="155,100,145,35"
+                    Click="DeleteElem"/>
             </Grid>
         </GroupBox>
 
