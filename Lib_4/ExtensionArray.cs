@@ -5,16 +5,25 @@ namespace Lib_4
 {
     public static class ExtensionArray
     {
-        public static void Init(this Array<double> numbers)
+        /// <summary>
+        /// Инициализация массива
+        /// </summary>
+        /// <param name="numbers"> Массив для заполнения </param>
+        public static void Init(this Array<double> numbers, int min = -10, int max = 11)
         {
             for (int i = 0; i < numbers.Capacity; i++)
             {
             Random rnd = new Random();
 
-                numbers.Add(rnd.Next(-10, 11));
+                numbers.Add(rnd.Next(min, max));
             }
         }
 
+        /// <summary>
+        /// Расчет по заданию
+        /// </summary>
+        /// <param name="numbers"> Массив для вычисления </param>
+        /// <returns></returns>
         public static string Calculate(Array<double> numbers)
         {
             string answer = "";

@@ -41,6 +41,11 @@ namespace LibArray
             }
         }
 
+        /// <summary>
+        /// Расширение длинны массива
+        /// </summary>
+        /// <param name="itemsLenght"> Длина </param>
+        /// <returns></returns>
         private int EnsureCapacity(int itemsLenght = 0)
         {
             int tempCapacity = Capacity;
@@ -52,6 +57,10 @@ namespace LibArray
             return tempCapacity;
         }
 
+        /// <summary>
+        /// Вывод в таблицу
+        /// </summary>
+        /// <returns></returns>
         public DataTable ToDataTable()
         {
             var res = new DataTable();
@@ -72,6 +81,10 @@ namespace LibArray
             return res;
         }
 
+        /// <summary>
+        /// Добавление массива в конец существующего
+        /// </summary>
+        /// <param name="items"> Массив для добавления </param>
         public void AddRange(T[] items)
         {
             Capacity = EnsureCapacity(items.Length);
@@ -79,8 +92,11 @@ namespace LibArray
             Length += items.Length;
         }
 
-        // 1 2 3 4 5 array
-        // 0 1 2 3 4 index
+        /// <summary>
+        /// Удаление введенного элемента
+        /// </summary>
+        /// <param name="item"> Элемент для удаления </param>
+        /// <returns></returns>
         public bool Remove(T item)
         {
             int x = Array.IndexOf(_items, item);
@@ -94,22 +110,24 @@ namespace LibArray
             return false;
         }
 
+        /// <summary>
+        /// Добавление элемента
+        /// </summary>
+        /// <param name="item"> Добавляющийся элемент </param>
         public void Add(T item)
         {
             Capacity = EnsureCapacity();
             _items[Length++] = item;
         }
 
+        /// <summary>
+        /// Очищение
+        /// </summary>
         public void Clear()
         {
             Capacity = _defaultcapacity;
             Length = 0;
             _items = new T[Capacity];
-        }
-
-        public T[] ToArray()
-        {
-            return _items.Take(Length).ToArray();
         }
     }
 }
